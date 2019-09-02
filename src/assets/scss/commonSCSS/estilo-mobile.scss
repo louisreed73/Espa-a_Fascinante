@@ -1,28 +1,102 @@
-// @import '~bootstrap/scss/bootstrap.scss';
+
+/*
+ Importo los estilos de Bootstrap que voy a
+necesitar para este proyecto. Así realizamos
+mayor eficiencia de carga de pagina
+*/
+
+
+@import '~bootstrap/scss/bootstrap-reboot.scss';
+@import '~bootstrap/scss/bootstrap-grid.scss';
+@import '~bootstrap/scss/_nav.scss';
+@import '~bootstrap/scss/_navbar.scss';
+@import '~bootstrap/scss/utilities/_background.scss';
+@import '~bootstrap/scss/_transitions.scss';
+@import '~bootstrap/scss/_images.scss';
+// @import '~bootstrap/scss/bootstrap-reboot.scss';
+
+/*
+ Importo los estilos globales de variables
+ Fuentes, colores, etc
+*/
 
 @import '_variables.scss';
 
 
+/*
+Estilos principales Comunes -
+Navegador - Pagina Home
+*/
+
+
 body {
     font-family: 'quicksand_lightregular';
-    color:white;
+    background:red;
 }
 
-.parent {
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    flex-flow:row wrap;
-}
-
-[class*="hijo"] {
-    flex: 0 1 350px;
-    margin:10px auto;
+/* // Header CV */
+.person {
     background:white;
-    color:black;
-    padding:10px;
-    // height:250px;
+    color:darkblue;
+    // text-align:center;
+    font-size: 20px;
+};
+
+hr {
+    margin-right: 3em;
+    border: .5px solid gainsboro;
+
 }
+
+/* // layout background row */
+
+.person + .row {
+    background:white;
+    margin-left:0;
+    margin-right:0;
+}
+
+[class|='header'] {
+    font-size:18px;
+    color:red;
+}
+
+p.lista-dato {
+
+    margin-top:.25rem;
+    margin-bottom:.25rem;
+}
+
+
+.info-Personal hr, .info-Academica hr, .info-Laboral hr {
+    margin:0;
+}
+
+.lista-dato, .lista-info-Academica > span {
+    font-family: 'quicksandregular';
+    font-weight:800;
+}
+
+.info-Academica .lista-info-Academica {
+        margin-top:.25rem !important;
+    margin-bottom:.25rem !important;
+}
+
+
+.lista-info-Academica > span:first-child {
+    color:blue;
+
+
+}
+
+.lista-info-Academica > span:last-child {
+    color:black;
+    margin-left:.4rem;
+
+}
+
+
+
 
 
 

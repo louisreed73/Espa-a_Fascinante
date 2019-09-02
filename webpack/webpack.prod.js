@@ -1,7 +1,7 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-const uglify=require('uglifyjs-webpack-plugin');
-const OptimizeCssAssets=require('optimize-css-assets-webpack-plugin');
+// const uglify=require('uglifyjs-webpack-plugin');
+// const OptimizeCssAssets=require('optimize-css-assets-webpack-plugin');
 
 function recursiveIssuer(m) {
     if (m.issuer) {
@@ -30,8 +30,8 @@ module.exports = merge(common, {
                     enforce: true,
                 },
                 contactStyles: {
-                    name: 'contact',
-                    test: (m, c, entry = 'contact') =>
+                    name: 'formularioRegistroUsuario',
+                    test: (m, c, entry = 'formularioRegistroUsuario') =>
                         m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,
                     chunks: 'all',
                     enforce: true,
@@ -39,8 +39,8 @@ module.exports = merge(common, {
             },
         },
         minimizer:[
-            new uglify(),
-            new OptimizeCssAssets(),
+/*             new uglify(),
+            new OptimizeCssAssets(), */
         ]
     },
 
