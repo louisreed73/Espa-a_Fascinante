@@ -26,4 +26,81 @@
   font-style: normal;
 }
 
+/* Fuente Titillium Web */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    // src: url(../../fonts/Titillium+Web_400_normal.eot); /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPecZTIAOhVxoMyOr9n_E7fdMPmCQ.eot */
+    src: local('☺'),
+        // url(../../fonts/Titillium+Web_400_normal.eot?#iefix) format('embedded-opentype'), /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPecZTIAOhVxoMyOr9n_E7fdMPmCQ.eot */
+        url(../../fonts/Titillium+Web_400_normal.woff2) format('woff2'), /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPecZTIAOhVxoMyOr9n_E7fdMPmDQ.woff2 */
+        url(../../fonts/Titillium+Web_400_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPecZTIAOhVxoMyOr9n_E7fdMPmCw.woff */
+        // url(../../fonts/Titillium+Web_400_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPecZTIAOhVxoMyOr9n_E7fdMPmCKZRbrw.ttf */
+        // url(../../fonts/Titillium+Web_400_normal.svg#Titillium+Web_400_normal) format('svg'); /* http://fonts.gstatic.com/l/font?kit=NaPecZTIAOhVxoMyOr9n_E7fdMPmCg&skey=19ee7c202c5bec48&v=v8#TitilliumWeb */
+}
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+    // src: url(../../fonts/Titillium+Web_300_normal.eot); /* {{embedded-opentype-gf-url}} */
+    src: local('☺'),
+        // url(../../fonts/Titillium+Web_300_normal.eot?#iefix) format('embedded-opentype'), /* {{embedded-opentype-gf-url}} */
+        url(../../fonts/Titillium+Web_300_normal.woff2) format('woff2'), /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPDcZTIAOhVxoMyOr9n_E7ffGjEGItzYw.woff2 */
+        url(../../fonts/Titillium+Web_300_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPDcZTIAOhVxoMyOr9n_E7ffGjEGItzZQ.woff */
+        // url(../../fonts/Titillium+Web_300_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPDcZTIAOhVxoMyOr9n_E7ffGjEGItzZpabuWI.ttf */
+        // url(../../fonts/Titillium+Web_300_normal.svg#Titillium+Web_300_normal) format('svg'); /* {{svg-gf-url}} */
+}
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    // src: url(../../fonts/Titillium+Web_600_normal.eot); /* {{embedded-opentype-gf-url}} */
+    src: local('☺'),
+        // url(../../fonts/Titillium+Web_600_normal.eot?#iefix) format('embedded-opentype'), /* {{embedded-opentype-gf-url}} */
+        url(../../fonts/Titillium+Web_600_normal.woff2) format('woff2'), /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPDcZTIAOhVxoMyOr9n_E7ffBzCGItzYw.woff2 */
+        url(../../fonts/Titillium+Web_600_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPDcZTIAOhVxoMyOr9n_E7ffBzCGItzZQ.woff */
+        // url(../../fonts/Titillium+Web_600_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPDcZTIAOhVxoMyOr9n_E7ffBzCGItzZpabuWI.ttf */
+        // url(../../fonts/Titillium+Web_600_normal.svg#Titillium+Web_600_normal) format('svg'); /* {{svg-gf-url}} */
+}
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 700;
+    // src: url(../../fonts/Titillium+Web_700_normal.eot); /* {{embedded-opentype-gf-url}} */
+    src: local('☺'),
+        // url(../../fonts/Titillium+Web_700_normal.eot?#iefix) format('embedded-opentype'), /* {{embedded-opentype-gf-url}} */
+        url(../../fonts/Titillium+Web_700_normal.woff2) format('woff2'), /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPDcZTIAOhVxoMyOr9n_E7ffHjDGItzYw.woff2 */
+        url(../../fonts/Titillium+Web_700_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPDcZTIAOhVxoMyOr9n_E7ffHjDGItzZQ.woff */
+        // url(../../fonts/Titillium+Web_700_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/titilliumweb/v8/NaPDcZTIAOhVxoMyOr9n_E7ffHjDGItzZpabuWI.ttf */
+        // url(../../fonts/Titillium+Web_700_normal.svg#Titillium+Web_700_normal) format('svg'); /* {{svg-gf-url}} */
+}
+
+/* Fuente inconsolata */
+
+@font-face {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 400;
+    // src: url(../../fonts/Inconsolata_400_normal.eot); /* http://fonts.gstatic.com/s/inconsolata/v18/QldKNThLqRwH-OJ1UHjlKGlZ5qw.eot */
+    src: local('☺'),
+        // url(../../fonts/Inconsolata_400_normal.eot?#iefix) format('embedded-opentype'), /* http://fonts.gstatic.com/s/inconsolata/v18/QldKNThLqRwH-OJ1UHjlKGlZ5qw.eot */
+        url(../../fonts/Inconsolata_400_normal.woff2) format('woff2'), /* http://fonts.gstatic.com/s/inconsolata/v18/QldKNThLqRwH-OJ1UHjlKGlZ5qg.woff2 */
+        url(../../fonts/Inconsolata_400_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/inconsolata/v18/QldKNThLqRwH-OJ1UHjlKGlZ5q4.woff */
+        // url(../../fonts/Inconsolata_400_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/inconsolata/v18/QldKNThLqRwH-OJ1UHjlKGlZ5q1ExfHw.ttf */
+        // url(../../fonts/Inconsolata_400_normal.svg#Inconsolata_400_normal) format('svg'); /* http://fonts.gstatic.com/l/font?kit=QldKNThLqRwH-OJ1UHjlKGlZ5q8&skey=20fa6569a31c71ee&v=v18#Inconsolata */
+}
+@font-face {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 700;
+    // src: url(../../fonts/Inconsolata_700_normal.eot); /* {{embedded-opentype-gf-url}} */
+    src: local('☺'),
+        // url(../../fonts/Inconsolata_700_normal.eot?#iefix) format('embedded-opentype'), /* {{embedded-opentype-gf-url}} */
+        url(../../fonts/Inconsolata_700_normal.woff2) format('woff2'), /* http://fonts.gstatic.com/s/inconsolata/v18/QldXNThLqRwH-OJ1UHjlKGHiw71p5_w.woff2 */
+        url(../../fonts/Inconsolata_700_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/inconsolata/v18/QldXNThLqRwH-OJ1UHjlKGHiw71p5_o.woff */
+        // url(../../fonts/Inconsolata_700_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/inconsolata/v18/QldXNThLqRwH-OJ1UHjlKGHiw71p5_naDpwm.ttf */
+        // url(../../fonts/Inconsolata_700_normal.svg#Inconsolata_700_normal) format('svg'); /* {{svg-gf-url}} */
+}
+
 $colorBackground:white;

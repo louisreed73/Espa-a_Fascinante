@@ -32,7 +32,7 @@ Navegador - Pagina Home
 
 body {
     font-family: 'quicksand_lightregular';
-    background:red;
+    background:rgb(20, 73, 143);
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -104,6 +104,7 @@ p.lista-dato {
     }
 }
 
+/* Color Fechas */
 
 .lista-info-Academica > span:first-child, .lista-info-Laboral> span:first-child {
         
@@ -113,8 +114,10 @@ p.lista-dato {
 
 }
 
+/* Color Datos */
+
 .lista-info-Academica > span:last-child,.lista-info-Laboral > span:last-child {
-    color:black;
+    color:rgb(56, 3, 3);
     margin-left:.4rem;
 
 }

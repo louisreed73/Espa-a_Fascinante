@@ -3,8 +3,76 @@
 
     body {
         background:darkred;
+    font-family: 'Titillium Web';
+
         
     }
+
+
+
+/* // Header CV */
+.person {
+    color:rgb(3, 57, 94);
+    font-size: 20px;
+};
+
+hr {
+    border: .5px solid gainsboro;
+}
+
+
+
+/* // layout background row */
+
+
+
+.lista-dato, .lista-info-Academica > span,.lista-info-Laboral > span, .person, .navbar {
+    font-family: 'Titillium Web';
+    font-weight:700;
+}
+
+
+/* Color Fechas */
+
+.lista-info-Academica > span:first-child, .lista-info-Laboral> span:first-child {
+        
+    color:rgb(97, 12, 59);
+    font-weight: normal;
+
+
+}
+
+/* Color Datos */
+
+.lista-info-Academica > span:last-child,.lista-info-Laboral > span:last-child {
+    color:black;
+    margin-left:.4rem;
+
+}
+
+/* Header color  Secciones*/
+
+.info-Personal [class|='header'] {
+    color:rgb(34, 58, 36);
+}
+
+.info-Academica [class|='header'] {
+    color:rgb(78, 3, 45);
+}
+
+.info-Laboral [class|='header'] {
+    color:rgb(80, 63, 43);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

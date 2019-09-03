@@ -2,7 +2,75 @@
 
     body {
         background:gold;
+        font-family:'Inconsolata';
     }
+
+    
+
+
+/* // Header CV */
+.person {
+    color:rgb(3, 88, 36);
+    font-size: 20px;
+};
+
+hr {
+    border: .5px solid gainsboro;
+}
+
+
+
+/* // layout background row */
+
+
+
+.lista-dato, .lista-info-Academica > span,.lista-info-Laboral > span, .person, .navbar {
+    font-family:'Inconsolata';
+    font-weight:700;
+}
+
+
+/* Color Fechas */
+
+.lista-info-Academica > span:first-child, .lista-info-Laboral> span:first-child {
+        
+    color:rgb(138, 41, 24);
+    font-weight: normal;
+
+
+}
+
+/* Color Datos */
+
+.lista-info-Academica > span:last-child,.lista-info-Laboral > span:last-child {
+    color:rgb(26, 6, 71);
+    margin-left:.4rem;
+
+}
+
+/* Header color  Secciones*/
+
+.info-Personal [class|='header'] {
+    color:rgb(63, 7, 7);
+}
+
+.info-Academica [class|='header'] {
+    color:rgb(73, 69, 4);
+}
+
+.info-Laboral [class|='header'] {
+    color:rgb(75, 5, 28);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
