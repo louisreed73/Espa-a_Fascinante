@@ -12,7 +12,8 @@ mayor eficiencia de carga de pagina
 @import '~bootstrap/scss/_navbar.scss';
 @import '~bootstrap/scss/utilities/_background.scss';
 @import '~bootstrap/scss/_transitions.scss';
-@import '~bootstrap/scss/_images.scss';
+
+@import '~bootstrap/scss/utilities/_position.scss';
 // @import '~bootstrap/scss/bootstrap-reboot.scss';
 
 /*
@@ -32,13 +33,14 @@ Navegador - Pagina Home
 body {
     font-family: 'quicksand_lightregular';
     background:red;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 /* // Header CV */
 .person {
     background:white;
     color:darkblue;
-    // text-align:center;
     font-size: 20px;
 };
 
@@ -46,6 +48,15 @@ hr {
     margin-right: 3em;
     border: .5px solid gainsboro;
 
+}
+
+/* Estilo subrayado de pagina actual */
+.linkActivo {
+    border-bottom: 1.5px solid darkblue;
+        font-family: 'quicksandregular';
+    font-weight:800;
+    color:darkblue !important;
+    background:rgba(207, 227, 248,1);
 }
 
 /* // layout background row */
@@ -61,40 +72,77 @@ hr {
     color:red;
 }
 
+.person, .info, .navbar {
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+/* Bloque Datos Personales*/
+
 p.lista-dato {
 
     margin-top:.25rem;
     margin-bottom:.25rem;
 }
 
+/* Bloque Seccion Academica - Laboral */
+
 
 .info-Personal hr, .info-Academica hr, .info-Laboral hr {
     margin:0;
 }
 
-.lista-dato, .lista-info-Academica > span {
+.lista-dato, .lista-info-Academica > span,.lista-info-Laboral > span, .person, .navbar {
     font-family: 'quicksandregular';
     font-weight:800;
 }
 
-.info-Academica .lista-info-Academica {
+.info-Academica .lista-info-Academica, .info-Laboral .lista-info-Laboral {
         margin-top:.25rem !important;
     margin-bottom:.25rem !important;
+    p {
+        margin-top: 0.5rem !important;
+    }
 }
 
 
-.lista-info-Academica > span:first-child {
-    color:blue;
+.lista-info-Academica > span:first-child, .lista-info-Laboral> span:first-child {
+        
+    color:rgba(24, 89, 138,1);
+    font-weight: normal;
 
 
 }
 
-.lista-info-Academica > span:last-child {
+.lista-info-Academica > span:last-child,.lista-info-Laboral > span:last-child {
     color:black;
     margin-left:.4rem;
 
 }
 
+/* Header color  Secciones*/
+
+.info-Personal [class|='header'] {
+    color:black;
+}
+
+.info-Academica [class|='header'] {
+    color:rgba(9, 100, 29,1);
+}
+
+.info-Laboral [class|='header'] {
+    color:rgba(18, 89, 124,1);
+}
+/* Espacio sufiente para los links */
+
+.navbar-light .navbar-nav .nav-link {
+    padding: 13px;
+}
+
+/* Control de ancho de fecha CV */
+
+.fix-numbers {
+    letter-spacing: -0.5px;
+}
 
 
 
