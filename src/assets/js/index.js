@@ -6,6 +6,7 @@ import 'bootstrap/js/dist/collapse.js';
 import '../scss/commonSCSS/estilo.scss';
 
 import * as pag from './moduloDOMLoaded.js';
+import { randomBytes } from 'crypto';
 
 /* declaración de variables importadas del modulo DOMLoaded */
 let {
@@ -41,14 +42,29 @@ log(_linkLogo)
 
 document.addEventListener("DOMContentLoaded", function (e) {
     /* función para recuperar string de la pagina donde nos encontramos cargada desde el modulo DOMloaded*/
+    if(!stringPag) {
+        log("pagina raiz")
+        subrayaLink(document.querySelector(".nav-link[data-location='index'"));
+        return false
+    }
     let stringPag = pagAct(document.location.href);
     let link=[..._links].filter(link=>{
-        return recuperadataSet(link)===stringPag
+
+        log(stringPag)
+
+        return recuperadataSet(link)===stringPag 
     })
+
+
     subrayaLink(link[0])
     
 
 });
+
+
+/* Validación pre-Submit Aviso errores */
+
+qs
 
 
 

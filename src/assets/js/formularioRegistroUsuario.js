@@ -14,7 +14,8 @@ let {
     recuperadataSet,
     qs,
     qsA,
-    subrayaLink
+    subrayaLink,
+    validationInput
 } = pag;
 
 /* selecciones de elementos para eventos y funcionalidades */
@@ -22,6 +23,7 @@ let {
 let elementos = [
     qsA("a.nav-link"),
     qs("a.navbar-brand"),
+    qsA("input")
 ];
 
 
@@ -29,9 +31,10 @@ let elementos = [
 
 let [
     _links,
-    _linkLogo
+    _linkLogo,
+    _inputs
 ] = elementos;
-log(_linkLogo)
+log(_inputs)
 
 
 /* Manejadores y Events Listeners Funcionalidades */
@@ -47,7 +50,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
         return recuperadataSet(link) === stringPag
     })
 
-    subrayaLink(link[0])
+    subrayaLink(link[0]);
 
 
 });
+
+_inputs.forEach((input,ind)=>{
+    input.addEventListener("blur",function(e) {
+
+     validationInput(e.target,ind)
+
+        // this.parentElement.querySelector(".valid-feedback").textContent="Muy bien hijo de puta!!"
+    })
+})
+
+

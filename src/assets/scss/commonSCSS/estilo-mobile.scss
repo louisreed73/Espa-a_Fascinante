@@ -14,6 +14,7 @@ mayor eficiencia de carga de pagina
 @import '~bootstrap/scss/_transitions.scss';
 
 @import '~bootstrap/scss/utilities/_position.scss';
+@import '~bootstrap/scss/_forms.scss';
 // @import '~bootstrap/scss/bootstrap-reboot.scss';
 
 /*
@@ -48,6 +49,11 @@ hr {
     margin-right: 3em;
     border: .5px solid gainsboro;
 
+}
+
+/* margin superior del menu navegacion mobile */
+.navbar-collapse .navbar-nav {
+    padding-top: .6rem;
 }
 
 /* Estilo subrayado de pagina actual */
@@ -148,7 +154,29 @@ p.lista-dato {
 }
 
 
+/* Formulario registro estilos */
 
+.formulario-Registro form {
+    background:white;
+    padding:.5rem;
+    border-radius: 5px;
+}
+.formulario-Registro legend {
+    font-size: 19px;
+    margin-bottom: 0.3px;
+}
+
+.formulario-Registro hr {
+        margin: 0 0 1.1rem 0;
+        border: .5px solid rgb(95, 119, 226);
+        margin-bottom: 14px;
+}
+
+// fieldset {
+//     border: 1px solid black;
+//     margin: 20px .5rem;
+//     border-radius: 5px;
+// }
 
 
 
