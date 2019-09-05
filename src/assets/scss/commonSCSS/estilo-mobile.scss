@@ -79,7 +79,7 @@ hr {
     color:red;
 }
 
-.person, .info, .navbar {
+.person, .info, .navbar, input[type='submit'] {
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
 }
 
@@ -176,6 +176,12 @@ p.lista-dato {
 
 form fieldset:not(:first-child) {
     margin-top: 2rem;
+}
+
+/* Label Ofertas block */
+
+label[for='usuario-Ofertas'] {
+    display:block;
 }
 
 

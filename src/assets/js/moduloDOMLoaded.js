@@ -1,3 +1,4 @@
+import { generateKeyPairSync } from "crypto";
 
 let { log,dir } = console;
 
@@ -71,7 +72,7 @@ log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
 
     }
 
-    if ((target.value.length > 2 && isValid) && ind !== 3) {
+    if ((target.value.length > 0 && isValid) && ind !== 3) {
 
 
         target.classList.add("is-valid");
@@ -79,11 +80,12 @@ log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
         log(ind)
 
     }
-    else if ((target.value.length > 2 && !isValid) && ind !== 3) {
+    else if ((target.value.length > 0 && !isValid) && ind !== 3 || (target.value.length ===0 && ind !== 3) ) {
         target.classList.add("is-invalid");
         target.classList.remove("is-valid");
 
     }
+    
 
 
     // log(ind, this.parentElement)
@@ -162,6 +164,51 @@ log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
     }
 }
 
+/* Función para validación de Pais  */
+
+function validacionSelPais(target) {
+    if (target.value !== "Elige...") {
+        target.classList.remove("is-invalid")
+        target.classList.add("is-valid")
+        return true
+    }
+    else {
+        target.classList.remove("is-valid")
+        target.classList.add("is-invalid")
+
+        return false
+
+    }
+}
+
+/* Funcion para Submit de checkeo de todos los inputs */
+
+function checkeoInputs(elems) {
+    let inputsValidos=[...elems].every(input=>{
+        return  input.classList.contains("is-valid")
+    })
+    log(inputsValidos);
+    return inputsValidos
+}
+
+function checkeoIgualClave(target,target2) {
+
+    log(target,target2)
+    if(target.value===target2.value && !!target.value && target2.value) {
+        target2.classList.remove("is-invalid");
+        target2.classList.add("is-valid");
+        return true
+    }
+
+    else {
+
+        target2.classList.remove("is-valid");
+        target2.classList.add("is-invalid");
+        return false
+
+    }
+}
+
 /* Exportaciones de funciones y variables del modulo */
 
 export {
@@ -171,5 +218,8 @@ export {
     qs,
     qsA,
     subrayaLink,
-    validationInput
+    validationInput,
+    checkeoInputs,
+    validacionSelPais,
+    checkeoIgualClave
 }

@@ -41,7 +41,7 @@
 
             <!-- Formulario -->
 
-            <form>
+            <form class="formulario-Registro">
 <!--                 FieldSet Primero Inicio--> 
                <fieldset>
                     <legend>Quien Eres</legend>
@@ -55,7 +55,7 @@
                             type="text"
                             class="form-control"
                             id="usuario-Nombre"
-                            data-regex="^[^\d]{1,15}$"
+                            data-regex="^[^\d]{3,15}$"
                             placeholder="Nombre">
                             <div class="valid-feedback">
                                 Looks good!
@@ -72,7 +72,7 @@
                             type="text"
                             class="form-control"
                             id="usuario-Apellidos"
-                            data-regex="^[^\d]{1,30}$"
+                            data-regex="^[^\d]{3,30}$"
                             placeholder="Apellidos">
                             <div class="valid-feedback">
                                 Looks good!
@@ -134,7 +134,7 @@
                             type="text"
                             class="form-control"
                             id="usuario-Ciudad"
-                            data-regex="^[^\d]{1,15}$"
+                            data-regex="^[^\d]{3,15}$"
                             placeholder="Ciudad">
                             <div class="valid-feedback">
                                 Looks good!
@@ -173,6 +173,12 @@
                                 <option value="Italia">Italia</option>
                                 <option value="Argentina">Argentina</option>
                             </select>
+                            <div class="valid-feedback">
+                                Has elegido un Pais...
+                            </div>
+                            <div class="invalid-feedback">
+                                Por favor, elige un País...
+                            </div>
                         </div>
                         <!-- input usuario Email Fin-->
                         
@@ -230,14 +236,14 @@
                             <input
                             type="text"
                             class="form-control"
-                            id="usuario-Clave"
-                            data-regex="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[\W])\S{8}$"
-                            placeholder="Clave">
+                            id="usuario-Clave2"
+                            
+                            placeholder="Clave" data-Validation="notValidation">
                             <div class="valid-feedback">
-                                Looks good!
+                                Correcto es la misma clave...
                             </div>
                             <div class="invalid-feedback">
-                                Please choose a username.
+                                Por favor, escribe la misma clave...
                             </div>
                         </div>
                         <!-- input usuario Clave checkeo Fin-->
@@ -247,8 +253,61 @@
 
                 </fieldset>
 <!--                 FieldSet Tercero Fin--> 
+<!-- ------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------ -->
 
-            <input class="btn btn-primary" type="submit" value="Crear Cuenta">
+<!--                 FieldSet Cuarto Inicio--> 
+               <fieldset>
+                    <legend>Condiciones de Registro</legend>
+                    <hr>
+
+                    <div class="row">
+                        <!-- check radios usuario Ofertas Periodicidad Usuario -->
+                        <div class="form-group col-12" data-Validation="Periodicidad">
+                                <label for="usuario-Ofertas">Deseo recibir ofertas de España Fascinante</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="usuario-Periodicidad1" value="dia" data-Validation="notValidation">
+                                <label class="form-check-label" for="usuario-Periodicidad1">Una vez al día</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="usuario-Periodicidad2" value="semana" data-Validation="notValidation">
+                                <label class="form-check-label" for="usuario-Periodicidad2">Una vez a la semana</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="usuario-Periodicidad3" value="mes" data-Validation="notValidation">
+                                <label class="form-check-label" for="usuario-Periodicidad3">Una vez al mes</label>
+                            </div>
+                        </div>
+                        <!-- check radios usuario Ofertas Periodicidad Usuario -->
+                        <!-- check radios usuario Ofertas Periodicidad Usuario -->
+                        <div class="form-group col-12">
+                              
+                    <!--         <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="check" name="inlineRadioOptions" id="usuario-AceptacionServicios" value="option1">
+                            </div> -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Aceptación" id="usuario-AceptacionServicios" data-Validation="notValidation">
+                                <label class="form-check-label" for="usuario-AceptacionServicios">Acepto el acuerdo de servicios, la declaración de privacidad y la declaración de uso de cookies</label>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please choose a username.
+                                        </div>
+                            </div>
+                        </div>
+                        <!-- check radios usuario Ofertas Periodicidad Usuario -->
+
+                        
+                        
+                        
+                    </div>
+
+                </fieldset>
+<!--                 FieldSet Cuarto Fin--> 
+
+            <input class="btn btn-primary" type="submit" value="Crear Cuenta" data-Validation="notValidation">
             </form>
             <!-- Formulario Fin -->
 
