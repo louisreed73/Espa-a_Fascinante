@@ -15,6 +15,7 @@ mayor eficiencia de carga de pagina
 
 @import '~bootstrap/scss/utilities/_position.scss';
 @import '~bootstrap/scss/_forms.scss';
+@import '~bootstrap/scss/_buttons.scss';
 // @import '~bootstrap/scss/bootstrap-reboot.scss';
 
 /*
@@ -158,8 +159,9 @@ p.lista-dato {
 
 .formulario-Registro form {
     background:white;
-    padding:.5rem;
+    padding: 2rem;
     border-radius: 5px;
+    margin-top:50px;
 }
 .formulario-Registro legend {
     font-size: 19px;
@@ -168,15 +170,26 @@ p.lista-dato {
 
 .formulario-Registro hr {
         margin: 0 0 1.1rem 0;
-        border: .5px solid rgb(95, 119, 226);
+        border: .5px solid rgba(192, 192, 192,1);
         margin-bottom: 14px;
 }
 
-// fieldset {
-//     border: 1px solid black;
-//     margin: 20px .5rem;
-//     border-radius: 5px;
-// }
+form fieldset:not(:first-child) {
+    margin-top: 2rem;
+}
+
+
+/* Boton crear Cuenta  */
+
+
+
+input.btn[type='submit'] {
+    background: red;
+    display:block;
+    margin:1rem auto 0;
+    border:none;
+}
+
 
 
 

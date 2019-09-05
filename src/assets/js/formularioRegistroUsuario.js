@@ -23,7 +23,8 @@ let {
 let elementos = [
     qsA("a.nav-link"),
     qs("a.navbar-brand"),
-    qsA("input")
+    qsA("input"),
+    qs("select")
 ];
 
 
@@ -32,9 +33,10 @@ let elementos = [
 let [
     _links,
     _linkLogo,
-    _inputs
+    _inputs,
+    _select
 ] = elementos;
-log(_inputs)
+log(_inputs,_select)
 
 
 /* Manejadores y Events Listeners Funcionalidades */
@@ -55,13 +57,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 });
 
-_inputs.forEach((input,ind)=>{
-    input.addEventListener("blur",function(e) {
 
-     validationInput(e.target,ind)
+for (let i = 0; i < _inputs.length; i++) {
 
-        // this.parentElement.querySelector(".valid-feedback").textContent="Muy bien hijo de puta!!"
+    _inputs[i].addEventListener("blur", function (e) {
+
+        validationInput(e.target, i)
     })
-})
 
-
+}

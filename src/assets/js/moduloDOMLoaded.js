@@ -1,5 +1,5 @@
 
-let { log } = console;
+let { log,dir } = console;
 
 /* Función para recuperar string de location de pagina */
 function pagAct(url) {
@@ -42,24 +42,52 @@ let qsA=(elem)=>{
 function validationInput(target,ind) {
     let exp = new RegExp(target.dataset.regex, "gi");
     let isValid = !!exp.exec(target.value)
+    let elementoMensajeValid = target.parentElement.querySelector(".valid-feedback");
+    let elementoMensajeInvalid = target.parentElement.querySelector(".invalid-feedback");
 
+    if (ind===3) {
+        let nac=new Date(target.value).getTime();
+        let ahora=Date.now();
+        let difEdad=new Date(ahora-nac);
+        let edad = Math.abs(difEdad.getUTCFullYear() - 1970    );
+log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
+       if (edad >=18) {
+          log( "Si!!!!");
+          target.classList.add("is-valid");
+          target.classList.remove("is-invalid");
+          
+          target.parentElement.querySelector(".valid-feedback").textContent = "Es correcto... eres mayor de 18 años...";
+          
+        }
 
-    if (target.value.length > 2 && isValid) {
+        else{
+            log( "No!!!!");
+            target.classList.add("is-invalid");
+            target.classList.remove("is-valid");
+            
+           target.parentElement.querySelector(".invalid-feedback").textContent = "Lo sentimos, no eres mayor de edad para iniciar Sesión";
+       }
+        // log(typeof nac,ahora)
+
+    }
+
+    if ((target.value.length > 2 && isValid) && ind !== 3) {
+
 
         target.classList.add("is-valid");
         target.classList.remove("is-invalid");
         log(ind)
 
     }
-    else if (target.value.length > 2 && !isValid) {
+    else if ((target.value.length > 2 && !isValid) && ind !== 3) {
         target.classList.add("is-invalid");
         target.classList.remove("is-valid");
 
     }
+
+
     // log(ind, this.parentElement)
 
-    let elementoMensajeValid = target.parentElement.querySelector(".valid-feedback");
-    let elementoMensajeInvalid = target.parentElement.querySelector(".invalid-feedback");
 
 
 
@@ -68,15 +96,64 @@ function validationInput(target,ind) {
     switch (ind) {
         case 0:
             {
-                elementoMensajeValid.textContent = "Muy bien el nombre hijo de puta!!";
-                elementoMensajeInvalid.textContent = "Muy mal  el nombre hijo de puta!!";
+                elementoMensajeValid.textContent = "Es correcto... tu nombre";
+                elementoMensajeInvalid.textContent = "Sólo letras y hasta un máximo 15 caracteres";
             }
             break;
         case 1:
             {
                 log("es este!!")
-                elementoMensajeValid.textContent = "Muy bien el apelllido hijo de puta!!";
-                elementoMensajeInvalid.textContent = "Muy mal  el apellido hijo de puta!!";
+                elementoMensajeValid.textContent = "Es correcto... tus apellidos";
+                elementoMensajeInvalid.textContent = "Sólo letras y hasta un máximo 30 caracteres";
+            }
+            break;
+        case 2:
+            {
+                log("es este!!")
+                elementoMensajeValid.textContent = "Es correcto... tu email";
+                elementoMensajeInvalid.textContent = "Este email no nos encaja... revísalo, por favor";
+            }
+            break;
+/*         case 3:
+            {
+                log("es este!!")
+                elementoMensajeValid.textContent = "Es correcto... tu fecha de nacimiento";
+                elementoMensajeInvalid.textContent = "No eres mayor de edad... lo sentimos.";
+            }
+            break; */
+        case 4:
+            {
+                log("es este!!")
+                elementoMensajeValid.textContent = "Es correcto... tu ciudad";
+                elementoMensajeInvalid.textContent = "Sólo letras y hasta un máximo 15 caracteres";
+            }
+            break;
+        case 5:
+            {
+                log("es este!!")
+                elementoMensajeValid.textContent = "Es correcto... tu Código Postal";
+                elementoMensajeInvalid.textContent = "Este Código Postal no nos encaja... revísalo, por favor";
+            }
+            break;
+        case 6:
+            {
+                log("es este!!")
+                elementoMensajeValid.textContent = "Es correcto... tu Nombre de Usuario";
+                elementoMensajeInvalid.textContent = "Sin caracteres especiales y hasta un máximo de 15 ";
+            }
+            break;
+        case 7:
+            {
+                log("es este!!")
+                elementoMensajeValid.textContent = "Es correcta... tu Clave";
+                elementoMensajeInvalid.textContent = "8 caracteres con al menos una May., Minuscula, número y carácter especial";
+            }
+            break;
+        case 8:
+            {
+                log("es este!!")
+                elementoMensajeValid.textContent = "Es correcta... tu Clave";
+                elementoMensajeInvalid.textContent = "No es la misma Clave, inténtalo otra vez, por favor...";
             }
             break;
 

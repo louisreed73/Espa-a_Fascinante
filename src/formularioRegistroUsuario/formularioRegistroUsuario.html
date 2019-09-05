@@ -36,15 +36,14 @@
                 </ul>
             </div>
         </nav>
-        <div class="container formulario-Registro">
-            <p class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                sequi, fugit aut nulla saepe sapiente, ut voluptatibus? Modi dolorum culpa in
-                asperiores possimus!</p>
+        <div class="container formulario-Registro mt-5">
+
 
             <!-- Formulario -->
 
             <form>
-                <fieldset>
+<!--                 FieldSet Primero Inicio--> 
+               <fieldset>
                     <legend>Quien Eres</legend>
                     <hr>
 
@@ -53,11 +52,11 @@
                         <div class="form-group col-12 col-sm-6">
                             <label for="usuario-Nombre">Nombre</label>
                             <input
-                                type="text"
-                                class="form-control"
-                                id="usuario-Nombre"
-                                data-regex="^[^\d]{1,15}$"
-                                placeholder="Nombre">
+                            type="text"
+                            class="form-control"
+                            id="usuario-Nombre"
+                            data-regex="^[^\d]{1,15}$"
+                            placeholder="Nombre">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -65,15 +64,16 @@
                                 Please choose a username.
                             </div>
                         </div>
+                        <!-- input usuario Nombre Fin -->
                         <!-- input usuario Apellidos -->
                         <div class="form-group col-12 col-sm-6">
                             <label for="usuario-Apellidos">Apellidos</label>
                             <input
-                                type="text"
-                                class="form-control"
-                                id="usuario-Apellidos"
-                                data-regex="^[^\d]{1,30}$"
-                                placeholder="Apellidos">
+                            type="text"
+                            class="form-control"
+                            id="usuario-Apellidos"
+                            data-regex="^[^\d]{1,30}$"
+                            placeholder="Apellidos">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -81,10 +81,174 @@
                                 Please choose a username.
                             </div>
                         </div>
+                        <!-- input usuario Apellidos Fin-->
+                        <!-- input usuario Email -->
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="usuario-Email">Email</label>
+                            <input
+                            type="email"
+                            class="form-control"
+                            id="usuario-Email"
+                            data-regex="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+                            placeholder="Email">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                        </div>
+                        <!-- input usuario Email Fin-->
+                        <!-- input usuario Date -->
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="usuario-Nacimiento">Fecha de nacimiento</label>
+                            <div>
+                                <input class="form-control" type="date" value="2010-08-19" id="usuario-Nacimiento">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- input usuario Date Fin-->
                     </div>
 
                 </fieldset>
+<!--                 FieldSet Primero Fin--> 
+<!-- ------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------ -->
 
+<!--                 FieldSet Segundo Inicio--> 
+               <fieldset>
+                    <legend>De donde Eres</legend>
+                    <hr>
+
+                    <div class="row">
+                        <!-- input usuario Ciudad -->
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="usuario-Ciudad">Ciudad</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="usuario-Ciudad"
+                            data-regex="^[^\d]{1,15}$"
+                            placeholder="Ciudad">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                        </div>
+                        <!-- input usuario Ciudad Fin -->
+                        <!-- input usuario Código Postal -->
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="usuario-CodigoPostal">Código Postal</label>
+                            <input
+                            type="number"
+                            class="form-control"
+                            id="usuario-CodigoPostal"
+                            data-regex="^(0[1-9]|5[0-2]|[1-4][0-9])\d{3}$"
+                            placeholder="Código Postal">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                        </div>
+                        <!-- input usuario Código Postal Fin-->
+                        <!-- input usuario País -->
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="usuario-País">País</label>
+                            
+                            <select id="usuario-País" class="form-control">
+                                <option selected>Elige...</option>
+                                <option value="España">España</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Francia">Francia</option>
+                                <option value="Italia">Italia</option>
+                                <option value="Argentina">Argentina</option>
+                            </select>
+                        </div>
+                        <!-- input usuario Email Fin-->
+                        
+                    </div>
+
+                </fieldset>
+<!--                 FieldSet Segundo Fin--> 
+<!-- ------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------ -->
+
+<!--                 FieldSet Tercero Inicio--> 
+               <fieldset>
+                    <legend>Como quieres Iniciar sesion</legend>
+                    <hr>
+
+                    <div class="row">
+                        <!-- input usuario Nombre de Usuario -->
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="usuario-NombreUs">Nombre de Usuario</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="usuario-NombreUs"
+                            data-regex="^[\w]{1,15}$"
+                            placeholder="Nombre de Usuario">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                        </div>
+                        <!-- input usuario Nombre de Usuario Fin -->
+                        <!-- input usuario Clave -->
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="usuario-Clave">Clave</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="usuario-Clave"
+                            data-regex="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[\W])\S{8}$"
+                            placeholder="Clave">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                        </div>
+                        <!-- input usuario Clave Fin-->
+                        <!-- input usuario Clave checkeo -->
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="usuario-Clave">Vuelve a escribir la Clave</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="usuario-Clave"
+                            data-regex="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[\W])\S{8}$"
+                            placeholder="Clave">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                        </div>
+                        <!-- input usuario Clave checkeo Fin-->
+                        
+                        
+                    </div>
+
+                </fieldset>
+<!--                 FieldSet Tercero Fin--> 
+
+            <input class="btn btn-primary" type="submit" value="Crear Cuenta">
             </form>
             <!-- Formulario Fin -->
 
