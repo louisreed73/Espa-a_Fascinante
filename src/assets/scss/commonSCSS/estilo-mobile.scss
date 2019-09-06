@@ -102,7 +102,7 @@ p.lista-dato {
     margin:0;
 }
 
-.lista-dato, .lista-info-Academica > span,.lista-info-Laboral > span, .person, .navbar {
+.lista-dato, .lista-info-Academica > span,.lista-info-Laboral > span, .person, .navbar,.usuarioP,.claveP {
     font-family: 'quicksandregular';
     font-weight:800;
 }
@@ -161,7 +161,7 @@ p.lista-dato {
 
 /* Formulario registro estilos */
 
-.formulario-Registro form {
+.formulario-Registro form, .info {
     background:white;
     padding: 2rem;
     border-radius: 5px;
@@ -209,6 +209,12 @@ input.btn[type='submit'][value='login'] {
 }
 
 
+/* Estilos login container información usuarios registrados */
 
-
+.info {
+    // min-height:400px;
+   
+    // background:red;
+ 
+}
 
