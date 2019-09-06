@@ -1,4 +1,3 @@
-import { generateKeyPairSync } from "crypto";
 
 let { log,dir } = console;
 
@@ -68,7 +67,6 @@ log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
             
            target.parentElement.querySelector(".invalid-feedback").textContent = "Lo sentimos, no eres mayor de edad para iniciar Sesión";
        }
-        // log(typeof nac,ahora)
 
     }
 
@@ -86,10 +84,6 @@ log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
 
     }
     
-
-
-    // log(ind, this.parentElement)
-
 
 
 
@@ -116,13 +110,7 @@ log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
                 elementoMensajeInvalid.textContent = "Este email no nos encaja... revísalo, por favor";
             }
             break;
-/*         case 3:
-            {
-                log("es este!!")
-                elementoMensajeValid.textContent = "Es correcto... tu fecha de nacimiento";
-                elementoMensajeInvalid.textContent = "No eres mayor de edad... lo sentimos.";
-            }
-            break; */
+
         case 4:
             {
                 log("es este!!")
@@ -191,6 +179,8 @@ function checkeoInputs(elems) {
     return inputsValidos
 }
 
+/* Función para el checkeo de igualdad de la clave en los dos campos de password */
+
 function checkeoIgualClave(target,target2) {
 
     log(target,target2)
@@ -209,6 +199,41 @@ function checkeoIgualClave(target,target2) {
     }
 }
 
+/* Array con las propiedades exactas del objeto de los inputs */
+
+let inputsProp=[
+    "nombre",
+    "apellidos",
+    "email",
+    "fechaNacimiento",
+    "ciudad",
+    "codigoPostal",
+    "usuario",
+    "clave"    
+]
+
+/* Función para la creación y retorno de un objeto con los datos del usuario */
+
+function Usuario(inputs) { 
+    // log(inputs)
+
+    log("Hola!!!")
+
+    let usuario= {};
+    
+    for(let i=0; i <inputs.length;i++) {
+        log(inputs[i],inputsProp[i])
+        usuario[inputsProp[i]]=inputs[i].value
+
+  
+    }
+
+    return usuario
+
+}
+
+
+
 /* Exportaciones de funciones y variables del modulo */
 
 export {
@@ -221,5 +246,7 @@ export {
     validationInput,
     checkeoInputs,
     validacionSelPais,
-    checkeoIgualClave
+    checkeoIgualClave,
+    Usuario,
+    inputsProp
 }

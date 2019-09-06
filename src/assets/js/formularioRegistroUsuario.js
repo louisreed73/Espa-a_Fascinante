@@ -7,6 +7,7 @@ import '../scss/commonSCSS/estilo.scss';
 
 import * as pag from './moduloDOMLoaded.js';
 import { generateKeyPairSync } from 'crypto';
+import { DH_UNABLE_TO_CHECK_GENERATOR } from 'constants';
 
 /* declaración de variables importadas del modulo DOMLoaded */
 let {
@@ -19,25 +20,32 @@ let {
     validationInput,
     checkeoInputs,
     validacionSelPais,
-    checkeoIgualClave
+    checkeoIgualClave,
+    Usuario
 
 } = pag;
 
 /* selecciones de elementos para eventos y funcionalidades */
 
+
 let elementos = [
     qsA("a.nav-link"),
     qs("a.navbar-brand"),
-    // qsA("input"),
     qsA("input:not([data-Validation='notValidation'])"),
     qs("select"),
     qs("[data-Validation='Periodicidad']"),
     qs("#usuario-AceptacionServicios"),
-    // qs("input[type='submit']")
     qs(".formulario-Registro"),
     qs("#usuario-Clave"),
-    qs("#usuario-Clave2")
+    qs("#usuario-Clave2"),
+    qs("#usuario-Clave2"),
 ];
+
+/* Array inserción de usuarios */
+
+let usuarios=[
+
+]
 
 
 /* declaración en variables de los elementos seleccionados dentro del array Elementos */
@@ -53,13 +61,7 @@ let [
     usuarioClave1,
     usuarioClave2
 ] = elementos;
-log(
-    // _inputs,
-    //  _select,
-    //   _radio, 
-    //   _AceptServicios,
-      usuarioClave1,
-      usuarioClave2)
+
 
 
 /* Manejadores y Events Listeners Funcionalidades */
@@ -67,6 +69,7 @@ log(
 /* Funcionalidad Pagina Activa */
 
 document.addEventListener("DOMContentLoaded", function (e) {
+
     /* función para recuperar string de la pagina donde nos encontramos cargada desde el modulo DOMloaded*/
     let stringPag = pagAct(document.location.href);
 
@@ -75,8 +78,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
         return recuperadataSet(link) === stringPag
     })
 
+    /* Carga de event listeners para handlers de errores de relleno campos */
     validacionInp();
     validacionInpValida();
+
+    /* Función para destacar la página actual en el menu navegador */
     subrayaLink(link[0]);
 
 
@@ -113,6 +119,7 @@ function validacionInpValida() {
 }
 
 
+/* Función para validar los pag.inputsProp, mensajes rellenado correcto o error */
 
 function validacionInpSubmit() {
 
@@ -120,7 +127,6 @@ function validacionInpSubmit() {
     
         _inputs[i].dispatchEvent(new Event('valida', { 'bubbles': true }));
     
-        // validationInput(_inputs[i], i)
     
     
     }
@@ -165,7 +171,7 @@ _AceptServicios.addEventListener("click",function(e){
 
 /* Evento Validación checkeo clave2 on blur */
 
-usuarioClave2.addEventListener("blur",function() {
+usuarioClave2.addEventListener("blur",function(e) {
     checkeoIgualClave(usuarioClave1, usuarioClave2)
 })
 
@@ -176,24 +182,47 @@ usuarioClave2.addEventListener("blur",function() {
 _formSubmit.addEventListener("submit",function (e) {
     log(`Submit form!!!!: ${e.target}`);
     e.preventDefault();
+
+    /* Validación trigger para mostrar los errores si el usuario submit form */
     validacionInpSubmit();
+
+    /* Validación de error o no del blur en selección Pais */
     disparaPais();
+
+    /* Función que dispara checkeo de inputs y devuelve boolean true si es todo correcto */
     let inputsOK = checkeoInputs(_inputs);
+
+    /* Función para checkear, boolean, si la clave coincide en los dos campos */
     let claves=checkeoIgualClave(usuarioClave1, usuarioClave2)
 
-    // log(`Checkeo igual clave:!!!${checkeoIgualClave(usuarioClave1,usuarioClave2)}`)
 
+    /* Checkeamos que todos los inputs, dato del pais, y aceptación de condicciones sea correcto */
 
     if (inputsOK &&
      _select.value!=="Elige..." &&
       _AceptServicios.checked &&
         claves) {
-        log("los inputs estan rellenos!!!!")
+
+        log("los inputs estan rellenos!!!!");
+
+        /* creación objeto nuevo usuario */
+        let usuario = Usuario(_inputs);
+
+        /* Propiedad periodicidad ofertas */
+        usuario.ofertas=qs("input[type='radio']:checked").value;
+
+        /* Selección de Pais */
+        usuario.pais=_select.value;
+
+        /* Inserción en el array de los datos del usuario */
+        usuarios.push(usuario);
+
+        log(usuario,usuarios);
     }
     
     else {
         log("los inputs no estan rellenos!!!!")
-
+        
     }
 
 
@@ -202,3 +231,4 @@ _formSubmit.addEventListener("submit",function (e) {
 
     
 })
+
