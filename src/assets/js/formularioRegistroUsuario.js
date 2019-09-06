@@ -20,11 +20,12 @@ let {
     checkeoInputs,
     validacionSelPais,
     checkeoIgualClave,
-    Usuario,
-    usuarios,
-    datosUsuarios,
+    validacionAccept
+    // Usuario,
+    // usuarios
+    // datosUsuarios
     
-    genId
+  
 
 } = pag;
 
@@ -168,7 +169,7 @@ _radio.addEventListener("click",function (e){
 /* Evento Validación Aceptación Servicios */
 
 _AceptServicios.addEventListener("click",function(e){
-    log(this.checked)
+    validacionAccept(_AceptServicios.checked, _AceptServicios);
 })
 
 /* Evento Validación checkeo clave2 on blur */
@@ -195,7 +196,8 @@ _formSubmit.addEventListener("submit",function (e) {
     let inputsOK = checkeoInputs(_inputs);
 
     /* Función para checkear, boolean, si la clave coincide en los dos campos */
-    let claves=checkeoIgualClave(usuarioClave1, usuarioClave2)
+    let claves=checkeoIgualClave(usuarioClave1, usuarioClave2);
+    let isAccepted = validacionAccept(_AceptServicios.checked, _AceptServicios);
 
 
 /*     ----------------------------------------------------------------------------
@@ -229,20 +231,20 @@ _formSubmit.addEventListener("submit",function (e) {
 
     if (inputsOK &&
      _select.value!=="Elige..." &&
-      _AceptServicios.checked &&
+        isAccepted &&
         claves) {
 
         log("los inputs estan rellenos!!!!");
 
         /* creación objeto nuevo usuario */
-        let usuario = Usuario(_inputs);
+        // let usuario = Usuario(_inputs);
 
         /* Propiedad periodicidad ofertas */
-        usuario.ofertas=qs("input[type='radio']:checked") ? qs("input[type='radio']:checked").value : "no rellenado" ;
+        // usuario.ofertas=qs("input[type='radio']:checked") ? qs("input[type='radio']:checked").value : "no rellenado" ;
         // usuario.ofertas="no rellenado";
 
         /* Selección de Pais */
-        usuario.pais=_select.value;
+        // usuario.pais=_select.value;
 
 
         /* generador de id */

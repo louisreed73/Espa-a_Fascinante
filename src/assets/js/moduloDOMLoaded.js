@@ -152,6 +152,25 @@ log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
     }
 }
 
+/* Función para validación de Aceptación de Condiciones  */
+
+function validacionAccept(existe,target) {
+    if (existe) {
+        target.classList.remove("is-invalid");
+        target.classList.add("is-valid");
+        target.parentElement.querySelector(".valid-feedback").textContent = "Gracias, por aceptar los servicios"
+        return true
+    }
+    else {
+        target.classList.remove("is-valid");
+        target.classList.add("is-invalid");
+        target.parentElement.querySelector(".invalid-feedback").textContent = "Para acceder a tu ingreso, necesitamos tu aceptación de las condiciones"
+
+        return false
+
+    }
+}
+
 /* Función para validación de Pais  */
 
 function validacionSelPais(target) {
@@ -182,7 +201,8 @@ function checkeoInputs(elems) {
 /* Función para el checkeo de igualdad de la clave en los dos campos de password */
 
 function checkeoIgualClave(target,target2) {
-
+    /* Función para el checkeo de igualdad de la clave en los dos campos de password */
+    
     log(target,target2)
     if(target.value===target2.value && !!target.value && target2.value) {
         target2.classList.remove("is-invalid");
@@ -199,9 +219,27 @@ function checkeoIgualClave(target,target2) {
     }
 }
 
+
+function submitLogin(_usuario, _clave) {
+
+    let loginUsuario = usuarios.filter(logUsuario => {
+        let { usuario, clave } = logUsuario;
+        return usuario === _usuario && clave === _clave;
+    })
+
+    if (loginUsuario.length > 0) {
+
+        // log(loginUsuario[0])
+        return loginUsuario[0];
+    }
+    else {
+        return false;
+    }
+}
+
 /* Array con las propiedades exactas del objeto de los inputs */
 
-let inputsProp=[
+/* let inputsProp=[
     "nombre",
     "apellidos",
     "email",
@@ -210,11 +248,11 @@ let inputsProp=[
     "codigoPostal",
     "usuario",
     "clave"    
-]
+] */
 
 /* Función para la creación y retorno de un objeto con los datos del usuario */
 
-function Usuario(inputs) { 
+/* function Usuario(inputs) { 
     // log(inputs)
 
     log("Hola!!!")
@@ -230,13 +268,13 @@ function Usuario(inputs) {
 
     return usuario
 
-}
+} */
 
 /* Variable usuarios y el localStorage para almacenar los usuarios en localStorage */
 
-let usuarios;
+// let usuarios;
 
-function datosUsuarios(usuario) {
+/* function datosUsuarios(usuario) {
 
     if(localStorage.getItem("usuarios")===null) {
         usuarios=[];
@@ -249,7 +287,7 @@ function datosUsuarios(usuario) {
     localStorage.setItem("usuarios",JSON.stringify(usuarios));
     log(   `El array usuarios es:     ${usuarios}      `      )
 
-}
+} */
 
 
 
@@ -257,9 +295,9 @@ function datosUsuarios(usuario) {
 
 
 /* Función generator de id */
-let _id;
+// let _id;
 
-function genId() {
+/* function genId() {
 
     function* _genr() {
 
@@ -277,7 +315,7 @@ function genId() {
 
 
     return _genr
-}
+} */
 
 
 
@@ -294,10 +332,11 @@ export {
     checkeoInputs,
     validacionSelPais,
     checkeoIgualClave,
-    Usuario,
-    inputsProp,
-    usuarios,
-    datosUsuarios,
-    genId,
+    validacionAccept
+    // Usuario,
+    // inputsProp,
+    // usuarios
+    // datosUsuarios
+    // genId,
    
 }

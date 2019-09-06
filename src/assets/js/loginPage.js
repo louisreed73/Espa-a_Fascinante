@@ -113,6 +113,8 @@ _buttonLogin.addEventListener("click",function(e){
 
     else {
         log("No coincide el usuario con la clave!!!")
+        _usuario.classList.add("is-invalid");
+        log(_usuario.parentElement.querySelector(".invalid-feedback").textContent="No coincide este usuario con esta clave, revisa y cambia o el usuario o la clave, por favor...")
 
     }
 
