@@ -232,6 +232,8 @@ function Usuario(inputs) {
 
 }
 
+/* Variable usuarios y el localStorage para almacenar los usuarios en localStorage */
+
 let usuarios;
 
 function datosUsuarios(usuario) {
@@ -249,7 +251,33 @@ function datosUsuarios(usuario) {
 
 }
 
+
+
 // localStorage.clear();
+
+
+/* Función generator de id */
+let _id;
+
+function genId() {
+
+    function* _genr() {
+
+        if(!_id) {
+            _id=0;
+        }
+
+        while (_id <3000) {
+    
+            yield  _id++;
+        }
+    }
+    
+
+
+
+    return _genr
+}
 
 
 
@@ -269,5 +297,7 @@ export {
     Usuario,
     inputsProp,
     usuarios,
-    datosUsuarios
+    datosUsuarios,
+    genId,
+   
 }

@@ -22,7 +22,9 @@ let {
     checkeoIgualClave,
     Usuario,
     usuarios,
-    datosUsuarios
+    datosUsuarios,
+    
+    genId
 
 } = pag;
 
@@ -42,11 +44,7 @@ let elementos = [
     qs("#usuario-Clave2"),
 ];
 
-/* Array inserción de usuarios */
 
-/* let usuarios=[
-
-] */
 
 
 /* declaración en variables de los elementos seleccionados dentro del array Elementos */
@@ -62,6 +60,9 @@ let [
     usuarioClave1,
     usuarioClave2
 ] = elementos;
+
+
+
 
 
 
@@ -197,6 +198,33 @@ _formSubmit.addEventListener("submit",function (e) {
     let claves=checkeoIgualClave(usuarioClave1, usuarioClave2)
 
 
+/*     ----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------- */
+
+    /* let usuariosId;
+
+    function datosUsuariosId() {
+
+        if (localStorage.getItem("_usuariosId") === null) {
+            usuariosId = 0;
+        }
+        else {
+            usuariosId = JSON.parse(localStorage.getItem("_usuariosid"));
+            usuariosId=Number(usuariosId+0);
+            log(`usuarios id es:${usuariosId}`)
+            usuariosId=usuariosId+1;
+            log(`usuarios id es:${usuariosId}`)
+            
+            localStorage.setItem("_usuariosId", JSON.stringify(usuariosId) );
+            log(`El array usuarios es:     ${usuarios}      `)
+        }
+
+        // usuarios.push(usuario);
+
+
+    } */
+
+
     /* Checkeamos que todos los inputs, dato del pais, y aceptación de condicciones sea correcto */
 
     if (inputsOK &&
@@ -216,9 +244,17 @@ _formSubmit.addEventListener("submit",function (e) {
         /* Selección de Pais */
         usuario.pais=_select.value;
 
+
+        /* generador de id */
+        //  _idGen.next().value;
+        // usuario.id = _idGen.next().value;
+      
+
         /* Inserción en el array de los datos del usuario */
         // usuarios.push(usuario);
-        datosUsuarios(usuario)
+        // datosUsuarios(usuario)
+
+        // datosUsuariosId()
         
         // log(usuario,usuarios);
         window.location.href ="/loginPage/loginPage.html"
@@ -239,3 +275,7 @@ _formSubmit.addEventListener("submit",function (e) {
 
 
 
+// log(_idGen.next().value)
+// log(_idGen.next().value)
+// log(_idGen.next().value)
+// log(_idGen.next().value)
