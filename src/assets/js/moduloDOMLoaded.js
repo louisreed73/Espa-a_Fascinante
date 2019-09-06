@@ -232,6 +232,25 @@ function Usuario(inputs) {
 
 }
 
+let usuarios;
+
+function datosUsuarios(usuario) {
+
+    if(localStorage.getItem("usuarios")===null) {
+        usuarios=[];
+    }
+    else {
+        usuarios=JSON.parse(localStorage.getItem("usuarios"))
+    }
+
+    usuarios.push(usuario);
+    localStorage.setItem("usuarios",JSON.stringify(usuarios));
+    log(   `El array usuarios es:     ${usuarios}      `      )
+
+}
+
+// localStorage.clear();
+
 
 
 /* Exportaciones de funciones y variables del modulo */
@@ -248,5 +267,7 @@ export {
     validacionSelPais,
     checkeoIgualClave,
     Usuario,
-    inputsProp
+    inputsProp,
+    usuarios,
+    datosUsuarios
 }

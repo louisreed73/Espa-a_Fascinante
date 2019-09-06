@@ -6,8 +6,7 @@ import 'bootstrap/js/dist/collapse.js';
 import '../scss/commonSCSS/estilo.scss';
 
 import * as pag from './moduloDOMLoaded.js';
-import { generateKeyPairSync } from 'crypto';
-import { DH_UNABLE_TO_CHECK_GENERATOR } from 'constants';
+
 
 /* declaración de variables importadas del modulo DOMLoaded */
 let {
@@ -21,7 +20,9 @@ let {
     checkeoInputs,
     validacionSelPais,
     checkeoIgualClave,
-    Usuario
+    Usuario,
+    usuarios,
+    datosUsuarios
 
 } = pag;
 
@@ -43,9 +44,9 @@ let elementos = [
 
 /* Array inserción de usuarios */
 
-let usuarios=[
+/* let usuarios=[
 
-]
+] */
 
 
 /* declaración en variables de los elementos seleccionados dentro del array Elementos */
@@ -209,18 +210,22 @@ _formSubmit.addEventListener("submit",function (e) {
         let usuario = Usuario(_inputs);
 
         /* Propiedad periodicidad ofertas */
-        usuario.ofertas=qs("input[type='radio']:checked").value;
+        usuario.ofertas=qs("input[type='radio']:checked") ? qs("input[type='radio']:checked").value : "no rellenado" ;
+        // usuario.ofertas="no rellenado";
 
         /* Selección de Pais */
         usuario.pais=_select.value;
 
         /* Inserción en el array de los datos del usuario */
-        usuarios.push(usuario);
-
-        log(usuario,usuarios);
+        // usuarios.push(usuario);
+        datosUsuarios(usuario)
+        
+        // log(usuario,usuarios);
+        window.location.href ="/loginPage/loginPage.html"
     }
     
     else {
+        
         log("los inputs no estan rellenos!!!!")
         
     }
@@ -231,4 +236,6 @@ _formSubmit.addEventListener("submit",function (e) {
 
     
 })
+
+
 

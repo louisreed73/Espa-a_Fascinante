@@ -52,6 +52,10 @@ hr {
 
 }
 
+h1 {
+    color:white;
+}
+
 /* margin superior del menu navegacion mobile */
 .navbar-collapse .navbar-nav {
     padding-top: .6rem;
@@ -196,6 +200,13 @@ input.btn[type='submit'] {
     border:none;
 }
 
+/* Boton login  */
+
+input.btn[type='submit'][value='login'] {
+    background: rgb(19, 134, 44);
+    min-width:150px;
+
+}
 
 
 

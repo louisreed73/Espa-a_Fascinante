@@ -7,7 +7,8 @@ const MiniCssExtractPlugin=require("mini-css-extract-plugin");
 module.exports = {
     entry: {
         "bundle": './src/assets/js/index.js',
-        "formularioRegistroUsuario": './src/assets/js/formularioRegistroUsuario.js'
+        "formularioRegistroUsuario": './src/assets/js/formularioRegistroUsuario.js',
+        "loginPage": './src/assets/js/loginPage.js',
     },
     output: {
         filename: "assets/js/[name].js",
@@ -99,6 +100,12 @@ module.exports = {
             template: "./src/formularioRegistroUsuario/formularioRegistroUsuario.html",
             // inject:true,
             chunks: ["formularioRegistroUsuario"]
+        }),
+        new HtmlWebpackPlugin({
+            filename: "loginPage/loginPage.html",
+            template: "./src/loginPage/loginPage.html",
+            // inject:true,
+            chunks: ["loginPage"]
         }),
 /*         new HtmlWebpackPlugin({
             filename: "formularioRegistroUsuario.html",
