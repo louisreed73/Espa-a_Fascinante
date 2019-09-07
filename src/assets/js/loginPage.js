@@ -105,7 +105,7 @@ _buttonLogin.addEventListener("click",function(e){
         let numUsu = _usuario.value.match(/\d+$/);
         log(numUsu)
         log("Correcto te voy a redirigir a tu página de Entrada!!!");
-        window.location.href = `/usuariosEntrada/entradaUsuario${numUsu[0]}.html`;
+        window.location.href = `/entradaUsuarios/entradaUsuario${numUsu[0]}.html`;
         // log(url)
 
         

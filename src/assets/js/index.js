@@ -6,7 +6,6 @@ import 'bootstrap/js/dist/collapse.js';
 import '../scss/commonSCSS/estilo.scss';
 
 import * as pag from './moduloDOMLoaded.js';
-import { randomBytes } from 'crypto';
 
 /* declaración de variables importadas del modulo DOMLoaded */
 let {
@@ -62,9 +61,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
 });
 
 
-/* Validación pre-Submit Aviso errores */
 
-qs
+
+
 
 
 

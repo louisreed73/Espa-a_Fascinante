@@ -9,6 +9,10 @@ module.exports = {
         "bundle": './src/assets/js/index.js',
         "formularioRegistroUsuario": './src/assets/js/formularioRegistroUsuario.js',
         "loginPage": './src/assets/js/loginPage.js',
+        "entradaUsuarios": './src/assets/js/entradaUsuarios.js',
+
+/*         "entradaUsuario2": './src/assets/js/entradaUsuario2.js',
+        "entradaUsuario3": './src/assets/js/entradaUsuario3.js', */
     },
     output: {
         filename: "assets/js/[name].js",
@@ -107,12 +111,25 @@ module.exports = {
             // inject:true,
             chunks: ["loginPage"]
         }),
-/*         new HtmlWebpackPlugin({
-            filename: "formularioRegistroUsuario.html",
-            template: "./src/formularioRegistroUsuario.html",
+        new HtmlWebpackPlugin({
+            filename: "entradaUsuarios/entradaUsuario1.html",
+            template: "./src/entradaUsuarios/entradaUsuario1.html",
             // inject:true,
-            chunks: ["formularioRegistroUsuario"]
-        }), */
+            chunks: ["entradaUsuarios"]
+        }),
+        new HtmlWebpackPlugin({
+            filename: "entradaUsuarios/entradaUsuario2.html",
+            template: "./src/entradaUsuarios/entradaUsuario2.html",
+            // inject:true,
+            chunks: ["entradaUsuarios"]
+        }),
+        new HtmlWebpackPlugin({
+            filename: "entradaUsuarios/entradaUsuario3.html",
+            template: "./src/entradaUsuarios/entradaUsuario3.html",
+            // inject:true,
+            chunks: ["entradaUsuarios"]
+        }),
+
         new webpack.ProvidePlugin({$: 'jquery'}),
 
         new MiniCssExtractPlugin({filename: "assets/css/[name].css"})
