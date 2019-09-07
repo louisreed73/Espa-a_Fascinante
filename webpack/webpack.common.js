@@ -15,6 +15,7 @@ module.exports = {
         "entradaUsuario3": './src/assets/js/entradaUsuario3.js', */
     },
     output: {
+        path: path.resolve(__dirname, '../Espana_Fascinante_Luis_Sanchez_Alcazar'),
         filename: "assets/js/[name].js",
         chunkFilename: "assets/js/[name]-shared.js"
     },
