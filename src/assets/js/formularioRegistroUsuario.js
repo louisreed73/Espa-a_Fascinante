@@ -218,7 +218,7 @@ _formSubmit.addEventListener("submit",function (e) {
 
 
         
-        window.location.href ="/loginPage/loginPage.html"
+        window.location.href ="../loginPage/loginPage.html"
     }
     
     else {

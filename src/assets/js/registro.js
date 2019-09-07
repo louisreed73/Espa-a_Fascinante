@@ -115,7 +115,7 @@ _buttonLogin.addEventListener("click",function(e){
     e.preventDefault()
     if (pasoCorrecto ) {
         let numUsu = _usuario.value.trim().match(/\d+$/);
-        window.location.href = `/entradaUsuarios/entradaUsuario${numUsu[0]}.html`;
+        window.location.href = `../entradaUsuarios/entradaUsuario${numUsu[0]}.html`;
 
         
     }
