@@ -7,6 +7,23 @@ import '../scss/commonSCSS/estilo.scss';
 
 import * as pag from './moduloDOMLoaded.js';
 
+/* Usaré para compatibilidad IE polyfill new Event - Custom Event */
+
+(function () {
+    if (typeof window.CustomEvent === "function") return false; //If not IE
+
+    function CustomEvent(event, params) {
+        params = params || { bubbles: false, cancelable: false, detail: undefined };
+        var evt = document.createEvent('CustomEvent');
+        evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+        return evt;
+    }
+
+    CustomEvent.prototype = window.Event.prototype;
+
+    window.CustomEvent = CustomEvent;
+})();
+
 
 /* declaración de variables importadas del modulo DOMLoaded */
 let {
@@ -122,7 +139,7 @@ function validacionInpSubmit() {
 
     for (let i = 0; i < _inputs.length; i++) {
     
-        _inputs[i].dispatchEvent(new Event('valida', { 'bubbles': true }));
+        _inputs[i].dispatchEvent(new CustomEvent('valida', { 'bubbles': true }));
     
     
     
@@ -147,7 +164,7 @@ _select.addEventListener("validaPais",function(e){
  /* función para Dispatch Event validation on Selección Pais */
 
  function disparaPais() {
-     _select.dispatchEvent(new Event("validaPais",{
+     _select.dispatchEvent(new CustomEvent("validaPais",{
          bubbles:true
      }))
  }

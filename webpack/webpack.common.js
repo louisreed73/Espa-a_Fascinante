@@ -8,7 +8,7 @@ module.exports = {
     entry: {
         "bundle": './src/assets/js/index.js',
         "formularioRegistroUsuario": './src/assets/js/formularioRegistroUsuario.js',
-        "loginPage": './src/assets/js/loginPage.js',
+        "registro": './src/assets/js/registro.js',
         "entradaUsuarios": './src/assets/js/entradaUsuarios.js',
 
 /*         "entradaUsuario2": './src/assets/js/entradaUsuario2.js',
@@ -109,7 +109,7 @@ module.exports = {
             filename: "loginPage/loginPage.html",
             template: "./src/loginPage/loginPage.html",
             // inject:true,
-            chunks: ["loginPage"]
+            chunks: ["registro"]
         }),
         new HtmlWebpackPlugin({
             filename: "entradaUsuarios/entradaUsuario1.html",

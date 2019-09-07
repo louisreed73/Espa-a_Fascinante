@@ -7,7 +7,22 @@ import '../scss/commonSCSS/estilo.scss';
 
 import * as pag from './moduloDOMLoaded.js';
 
+/* Usaré para compatibilidad IE polyfill new Event - Custom Event */
 
+(function () {
+    if (typeof window.CustomEvent === "function") return false; //If not IE
+
+    function CustomEvent(event, params) {
+        params = params || { bubbles: false, cancelable: false, detail: undefined };
+        var evt = document.createEvent('CustomEvent');
+        evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+        return evt;
+    }
+
+    CustomEvent.prototype = window.Event.prototype;
+
+    window.CustomEvent = CustomEvent;
+})();
 
 
 /* declaración de variables importadas del modulo DOMLoaded */
@@ -96,10 +111,10 @@ let usuarios=[
 
 _buttonLogin.addEventListener("click",function(e){
 
-    let pasoCorrecto = submitLogin(_usuario.value, _clave.value);
+    let pasoCorrecto = submitLogin(_usuario.value.trim(), _clave.value.trim());
     e.preventDefault()
     if (pasoCorrecto ) {
-        let numUsu = _usuario.value.match(/\d+$/);
+        let numUsu = _usuario.value.trim().match(/\d+$/);
         window.location.href = `/entradaUsuarios/entradaUsuario${numUsu[0]}.html`;
 
         
