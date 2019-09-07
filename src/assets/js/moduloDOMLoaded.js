@@ -4,10 +4,8 @@ let { log,dir } = console;
 /* Función para recuperar string de location de pagina */
 function pagAct(url) {
 
-    log(url)
 
     let pagina = url.match(/\/(?<pagina>\w+).html/).groups.pagina;
-    // log(pagina)
     return pagina;
 }
 
@@ -50,9 +48,7 @@ function validationInput(target,ind) {
         let ahora=Date.now();
         let difEdad=new Date(ahora-nac);
         let edad = Math.abs(difEdad.getUTCFullYear() - 1970    );
-log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
        if (edad >=18) {
-          log( "Si!!!!");
           target.classList.add("is-valid");
           target.classList.remove("is-invalid");
           
@@ -61,7 +57,6 @@ log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
         }
 
         else{
-            log( "No!!!!");
             target.classList.add("is-invalid");
             target.classList.remove("is-valid");
             
@@ -75,7 +70,6 @@ log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
 
         target.classList.add("is-valid");
         target.classList.remove("is-invalid");
-        log(ind)
 
     }
     else if ((target.value.length > 0 && !isValid) && ind !== 3 || (target.value.length ===0 && ind !== 3) ) {
@@ -87,8 +81,7 @@ log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
 
 
 
-    log(elementoMensajeValid, elementoMensajeInvalid)
-
+/* Mensajes de error y relleno correcto */
     switch (ind) {
         case 0:
             {
@@ -98,14 +91,12 @@ log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
             break;
         case 1:
             {
-                log("es este!!")
                 elementoMensajeValid.textContent = "Es correcto... tus apellidos";
                 elementoMensajeInvalid.textContent = "Sólo letras y hasta un máximo 30 caracteres";
             }
             break;
         case 2:
             {
-                log("es este!!")
                 elementoMensajeValid.textContent = "Es correcto... tu email";
                 elementoMensajeInvalid.textContent = "Este email no nos encaja... revísalo, por favor";
             }
@@ -113,35 +104,30 @@ log("Esta es la fecha de Nacimiento!!!!",target.value,edad);
 
         case 4:
             {
-                log("es este!!")
                 elementoMensajeValid.textContent = "Es correcto... tu ciudad";
                 elementoMensajeInvalid.textContent = "Sólo letras y hasta un máximo 15 caracteres";
             }
             break;
         case 5:
             {
-                log("es este!!")
                 elementoMensajeValid.textContent = "Es correcto... tu Código Postal";
                 elementoMensajeInvalid.textContent = "Este Código Postal no nos encaja... revísalo, por favor";
             }
             break;
         case 6:
             {
-                log("es este!!")
                 elementoMensajeValid.textContent = "Es correcto... tu Nombre de Usuario";
                 elementoMensajeInvalid.textContent = "Sin caracteres especiales y hasta un máximo de 15 ";
             }
             break;
         case 7:
             {
-                log("es este!!")
                 elementoMensajeValid.textContent = "Es correcta... tu Clave";
                 elementoMensajeInvalid.textContent = "8 caracteres con al menos una May., Minuscula, número y carácter especial";
             }
             break;
         case 8:
             {
-                log("es este!!")
                 elementoMensajeValid.textContent = "Es correcta... tu Clave";
                 elementoMensajeInvalid.textContent = "No es la misma Clave, inténtalo otra vez, por favor...";
             }
@@ -194,16 +180,15 @@ function checkeoInputs(elems) {
     let inputsValidos=[...elems].every(input=>{
         return  input.classList.contains("is-valid")
     })
-    log(inputsValidos);
     return inputsValidos
 }
 
 /* Función para el checkeo de igualdad de la clave en los dos campos de password */
 
 function checkeoIgualClave(target,target2) {
+
     /* Función para el checkeo de igualdad de la clave en los dos campos de password */
     
-    log(target,target2)
     if(target.value===target2.value && !!target.value && target2.value) {
         target2.classList.remove("is-invalid");
         target2.classList.add("is-valid");
@@ -229,95 +214,12 @@ function submitLogin(_usuario, _clave) {
 
     if (loginUsuario.length > 0) {
 
-        // log(loginUsuario[0])
         return loginUsuario[0];
     }
     else {
         return false;
     }
 }
-
-/* Array con las propiedades exactas del objeto de los inputs */
-
-/* let inputsProp=[
-    "nombre",
-    "apellidos",
-    "email",
-    "fechaNacimiento",
-    "ciudad",
-    "codigoPostal",
-    "usuario",
-    "clave"    
-] */
-
-/* Función para la creación y retorno de un objeto con los datos del usuario */
-
-/* function Usuario(inputs) { 
-    // log(inputs)
-
-    log("Hola!!!")
-
-    let usuario= {};
-    
-    for(let i=0; i <inputs.length;i++) {
-        log(inputs[i],inputsProp[i])
-        usuario[inputsProp[i]]=inputs[i].value
-
-  
-    }
-
-    return usuario
-
-} */
-
-/* Variable usuarios y el localStorage para almacenar los usuarios en localStorage */
-
-// let usuarios;
-
-/* function datosUsuarios(usuario) {
-
-    if(localStorage.getItem("usuarios")===null) {
-        usuarios=[];
-    }
-    else {
-        usuarios=JSON.parse(localStorage.getItem("usuarios"))
-    }
-
-    usuarios.push(usuario);
-    localStorage.setItem("usuarios",JSON.stringify(usuarios));
-    log(   `El array usuarios es:     ${usuarios}      `      )
-
-} */
-
-
-
-// localStorage.clear();
-
-
-/* Función generator de id */
-// let _id;
-
-/* function genId() {
-
-    function* _genr() {
-
-        if(!_id) {
-            _id=0;
-        }
-
-        while (_id <3000) {
-    
-            yield  _id++;
-        }
-    }
-    
-
-
-
-    return _genr
-} */
-
-
 
 /* Exportaciones de funciones y variables del modulo */
 
@@ -333,10 +235,5 @@ export {
     validacionSelPais,
     checkeoIgualClave,
     validacionAccept
-    // Usuario,
-    // inputsProp,
-    // usuarios
-    // datosUsuarios
-    // genId,
    
 }

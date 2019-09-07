@@ -95,33 +95,22 @@ let usuarios=[
 
 
 _buttonLogin.addEventListener("click",function(e){
-    // log("Ingreso!!!")
-    log(_usuario.value,_clave.value);
 
     let pasoCorrecto = submitLogin(_usuario.value, _clave.value);
-    log(pasoCorrecto)
     e.preventDefault()
     if (pasoCorrecto ) {
         let numUsu = _usuario.value.match(/\d+$/);
-        log(numUsu)
-        log("Correcto te voy a redirigir a tu página de Entrada!!!");
         window.location.href = `/entradaUsuarios/entradaUsuario${numUsu[0]}.html`;
-        // log(url)
 
         
     }
 
     else {
-        log("No coincide el usuario con la clave!!!")
         _usuario.classList.add("is-invalid");
-        log(_usuario.parentElement.querySelector(".invalid-feedback").textContent="No coincide este usuario con esta clave, revisa y cambia o el usuario o la clave, por favor...")
 
     }
 
-/*     if( !pasoCorrecto.length>0   ) {
-        log("No coincide el usuario con la clave!!!")
 
-    } */
 })
 
 
@@ -137,7 +126,6 @@ function submitLogin(_usuario,_clave) {
     
     if (loginUsuario.length>0) {
     
-        // log(loginUsuario[0])
         return loginUsuario[0];
     }
     else {
@@ -146,4 +134,3 @@ function submitLogin(_usuario,_clave) {
 }
 
 
-// let usuario=usuarios
